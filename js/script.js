@@ -39,13 +39,13 @@ function addPagination(list) {
       if (i === 1) {
          newButtom =
             `<li>
-         <button type="button" class="active" onclick="setActivePage(${i})">${i}</button>
+         <button type="button" class="active">${i}</button>
       </li>`
          ulLinkList.insertAdjacentHTML('beforeend', newButtom);
       } else {
          newButtom =
             `<li>
-         <button type="button" onclick="setActivePage(${i})">${i}</button>
+         <button type="button">${i}</button>
       </li>`
          ulLinkList.insertAdjacentHTML('beforeend', newButtom);
       }
@@ -68,15 +68,15 @@ addPagination(data);
 
 
 // Add search bar:
-const searchBar = document.querySelector('.header');
-searchBar.innerHTML = `<label for="search" class="student-search">
+   const searchBar = document.querySelector('.header');
+   searchBar.innerHTML = `<label for="search" class="student-search">
 <span>Search by name</span>
 <input id="search" placeholder="Search by name...">
 <button type="button"><img src="img/icn-search.svg" alt="Search icon"></button>
-</label>`;
+</label>`;  
 
 // Add search functionality:
-searchBar.addEventListener('keyup', e => {
+   searchBar.addEventListener('keyup', e => {
    let currentValue = e.target.value.toLowerCase();
    let student = document.querySelectorAll('h3.title');
    let isNoRecords = true;
