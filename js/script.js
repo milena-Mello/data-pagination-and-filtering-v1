@@ -65,38 +65,3 @@ function addPagination(list) {
 // Call functions:
 showPage(data, 1);
 addPagination(data);
-
-
-// Add search bar:
-   const searchBar = document.querySelector('.header');
-   searchBar.innerHTML = `<label for="search" class="student-search">
-<span>Search by name</span>
-<input id="search" placeholder="Search by name...">
-<button type="button"><img src="img/icn-search.svg" alt="Search icon"></button>
-</label>`;  
-
-// Add search functionality:
-   searchBar.addEventListener('keyup', e => {
-   let currentValue = e.target.value.toLowerCase();
-   let student = document.querySelectorAll('h3.title');
-   let isNoRecords = true;
-
-   student.forEach(students => {
-      if(students.textContent.toLocaleLowerCase().includes(currentValue)) {
-         students.parentNode.parentNode.style.display = 'block';
-         isNoRecords = false;
-      } else {
-         students.parentNode.parentNode.style.display = 'none';
-         isNoRecords = true;
-      }
-      // Add Pagination for Search Results:
-      addPagination(student);
-   })
-})
-
-
-
-
-
-
-
